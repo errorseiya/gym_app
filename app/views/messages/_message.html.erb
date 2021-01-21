@@ -1,0 +1,21 @@
+<div class="message">
+  <div class="upper-message">
+    <div class="message-user">
+      <!-- 投稿したユーザー名情報を出力する -->
+      <%= message.user.name %>
+    </div>
+    <div class="message-date">
+      <!-- 投稿した時刻を出力する -->
+      <%= l message.created_at %>
+    </div>
+  </div>
+  <div class="lower-message">
+    <div class="message-content">
+      <!-- 投稿したメッセージ内容を記述する -->
+      <%= message.content %> 
+      <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+      <%# variant(resize: '500x500')で、保存されている画像データを指定されたサイズに変換。幅x高さのxは、半角英数のx（エックス）を使用 %>
+      <%# if message.image.attached?と記述することで、画像が存在する場合のみimage_tagが読み込まれるようになります。 %>
+    </div>
+  </div>
+</div>
