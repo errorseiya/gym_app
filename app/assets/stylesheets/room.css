@@ -112,8 +112,14 @@ li {
   color: #38aef0;
 }
 
-select {
+/* select {
   width: 500px;
+  height: 50px;
+} */
+
+/* 試験運用 */
+select {
+  
   height: 50px;
 }
 

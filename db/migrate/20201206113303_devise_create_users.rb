@@ -8,6 +8,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
+      t.boolean :admin,             default: false
+      t.string :name_kana,          null: false
+
+      t.string :subscription_id  #追記
+      t.boolean :premium, default: false, null: false #追記
+      
+      
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

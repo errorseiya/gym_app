@@ -57,8 +57,8 @@
 | email              | string  | null: false |
 | password           | string  | null: false |
 | encrypted_password | string  | null: false |
-| subscription_id    | string  | null: false |
-| premium            | boolean | null: false |
+| subscription_id    | string  |             |
+| premium            | boolean | null: false, default: false |
 
 
 ### Association

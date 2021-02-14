@@ -1,0 +1,29 @@
+<p>クレジットード情報入力</p>
+
+<%= form_with model: @card, url: cards_path, local: true, html: { name: 'inputForm' } do |f| %>
+  <p>カード番号</p>
+  <%= f.text_field :card_number, id: "card_number",class: "card_form",maxlength: '16' %>
+  <p>有効期限</p>
+  <%#= f.collection_select :exp_month , Month.all, :id, :name , {},class: "card-check-box",id: "exp_month" %>
+  <%= f.text_area :exp_month, class:"input-expiration-date", id:"card-exp-month", placeholder:"例)3" %>
+          <p>月</p>
+  <%= f.text_area :exp_year, class:"input-expiration-date", id:"card-exp-year", placeholder:"例)23" %>
+          <p>年</p>
+  <%#= f.collection_select :exp_year, Year.all, :id, :name, {}, class: "card-check-box",id: "exp_year"  %>
+  <p>セキュリティコード</p>
+  <%= f.password_field :cvc, id: 'cvc',class: "card_form" ,maxlength: '6',autocomplete: "on" %>
+  <div class="card-btn" id="card_token"></div>
+  <%= f.submit 'サブスク決済をする', id: 'token_submit',class: 'card-btn' %>
+<% end %><p>クレジットード情報入力</p>
+
+<%= form_with model: @card, url: cards_path, local: true, html: { name: 'inputForm' } do |f| %>
+  <p>カード番号</p>
+  <%= f.text_field :card_number, id: "card_number",class: "card_form",maxlength: '16' %>
+  <p>有効期限</p>
+  <%= f.collection_select :exp_month , Month.all, :id, :name , {},class: "card-check-box",id: "exp_month" %>
+  <%= f.collection_select :exp_year, Year.all, :id, :name, {}, class: "card-check-box",id: "exp_year"  %>
+  <p>セキュリティコード</p>
+  <%= f.password_field :cvc, id: 'cvc',class: "card_form" ,maxlength: '6',autocomplete: "on" %>
+  <div class="card-btn" id="card_token"></div>
+  <%= f.submit 'サブスク決済をする', id: 'token_submit',class: 'card-btn' %>
+<% end %>

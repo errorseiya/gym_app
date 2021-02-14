@@ -1,19 +1,18 @@
 <div class="side-header">
-  <div class="user-name">
-    <%# <a href="#">Tom</a> %>
-    <%= link_to current_user.name, edit_user_path(current_user) %>
+  <div class="user-name"> 
+    <%= link_to current_user.name, "#" %>
   </div>
   <div class="chat-create">
-     <%= link_to "チャットを作成する", new_room_path %>
+     <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
   </div>
 </div>
 
 <div class="rooms">
-   <% current_user.rooms.each do |room| %><%# 「チャットルーム名を表示する」という処理を繰り返し実行 %>
+   <% @user.each do |user| %>
     <div class="room">
       <div class="room-name">
         <%# <a href="#"><%= room.name</a> %> 
-        <%= link_to room.name, room_messages_path(room) %>
+        <%= link_to user.name, "#" %>
         <%# room_messages_pathはmessages#index %>
         <%# ※room_messages_path(room) の(room) はroom-idのこと、今messagesを送ろうとしているが土台となるroomの指定が不可欠なので(room)で指定してあげてる%>
         <%# パスにroomを引数とすることで、メッセージと紐付いているチャットルームのidを持たせる %>
@@ -21,5 +20,4 @@
       </div>
     </div>
   <% end %>
-  
 </div>
